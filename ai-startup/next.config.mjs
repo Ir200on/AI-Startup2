@@ -4,8 +4,8 @@ const nextConfig = {
   output: 'export',
   //add an export because of error `next export` and add folder /out
 
-  basePath: '/AI-Startup2', 
-  assetPrefix: '/AI-Startup2/',
+  // basePath: '/AI-Startup2', 
+  // assetPrefix: '/AI-Startup2/',
   //if images or styles are not working 
 
   webpack(config) {
