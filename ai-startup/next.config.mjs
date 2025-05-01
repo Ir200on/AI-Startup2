@@ -2,7 +2,7 @@
 const nextConfig = {
 
   output: 'export',
-  //add an export because of error `next export`
+  //add an export because of error `next export` and add folder /out
 
   webpack(config) {
     // Grab the existing rule that handles SVG imports
