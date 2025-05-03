@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 
-  output: 'export',
+  // output: 'export',
   //add an export because of error `next export` and add folder /out
 
   // basePath: '/AI-Startup2', 
