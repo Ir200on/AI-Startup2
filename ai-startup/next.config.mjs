@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
+const nextConfig = {
   // output: 'export',
   //add an export because of error `next export` and add folder /out
 
