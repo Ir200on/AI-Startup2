@@ -125,7 +125,7 @@ export const Features = () => {
   const backgroundPositionY = useMotionValue(tabs[0].backgroundPositionY);
   const backgroundSizeX = useMotionValue(tabs[0].backgroundSizeX);
 
-  const backgroundPosition = useMotionTemplate`${backgroundPositionX}% ${backgroundPositionY}`;
+  const backgroundPosition = useMotionTemplate`${backgroundPositionX}% ${backgroundPositionY}%`;
   const backgroundSize = useMotionTemplate`${backgroundSizeX}% auto`;
 
   const handleSelectTab = (index: number) => {
