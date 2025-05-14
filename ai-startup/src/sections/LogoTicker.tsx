@@ -39,10 +39,10 @@ export const LogoTicker = () => {
                 celestialLogo,
                 apexLogo,
                 quantumLogo,
-              ].map((logo) => (
+              ].map((logo, index) => (
                 <img
                   src={logo.src}
-                  key={logo.src}
+                  key={`${logo.src}-${index}`}
                   alt="Partner logo"
                   className="h-6 w-auto"
                 />

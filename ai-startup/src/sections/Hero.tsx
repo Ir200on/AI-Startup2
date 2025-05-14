@@ -13,7 +13,7 @@ export const Hero = () => {
   const sectctionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectctionRef,
-    offset: ["start end", "end"],
+    offset: ["start end", "end start"],
   });
 
   const backgroundPositionY = useTransform(
