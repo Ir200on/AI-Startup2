@@ -4,6 +4,8 @@ import starsBg from "@/assets/stars.png";
 import {
   motion,
   useMotionValueEvent,
+  useAnimationFrame,
+  useMotionValue,
   useScroll,
   useTransform,
 } from "framer-motion";
@@ -16,6 +18,17 @@ export const Hero = () => {
     offset: ["start end", "end start"],
   });
 
+  const backgroundPositionXNum = useMotionValue(0);
+  const backgroundPositionX = useTransform(
+    backgroundPositionXNum,
+    (latest) => `${latest}px`
+  );
+
+  useAnimationFrame((time) => {
+    const x = (time / 60) % starsBg.width;
+    backgroundPositionXNum.set(x);
+  });
+
   const backgroundPositionY = useTransform(
     scrollYProgress,
     [0, 1],
@@ -23,20 +36,29 @@ export const Hero = () => {
   );
 
   return (
+    // <motion.section
+    //   ref={sectctionRef}
+    //   className="h-[495px] md:h-[800px] flex items-center overflow-hidden relative [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
+    //   style={{
+    //     backgroundImage: `url(${starsBg.src})`,
+    //     backgroundPositionY,
+    //   }}
+    //   animate={{
+    //     backgroundPositionX: starsBg.width,
+    //   }}
+    //   transition={{
+    //     repeat: Infinity,
+    //     ease: "linear",
+    //     duration: 120,
+    //   }}
+    // >
     <motion.section
       ref={sectctionRef}
       className="h-[495px] md:h-[800px] flex items-center overflow-hidden relative [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]"
       style={{
         backgroundImage: `url(${starsBg.src})`,
         backgroundPositionY,
-      }}
-      animate={{
-        backgroundPositionX: starsBg.width,
-      }}
-      transition={{
-        repeat: Infinity,
-        ease: "linear",
-        duration: 120,
+        backgroundPositionX,
       }}
     >
       <div className="absolute inset-0 bg-[radial-gradient(75%_75%_at_center_center,rgb(140,69,255,.5)_15%,rgb(14,0,36,.5)_78%,transparent)]"></div>
