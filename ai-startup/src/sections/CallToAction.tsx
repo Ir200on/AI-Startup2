@@ -40,10 +40,11 @@ export const CallToAction = () => {
     target: sectionRef,
     offset: ["start end", "end start"],
   });
+
   const backgroundPositionY = useTransform(
     scrollYProgress,
     [0, 1],
-    [-300, 300]
+    ["0px", "-150px"]
   );
 
   const [mouseX, mouseY] = useRelativeMousePosition(borderDivRef);
